@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker Settings</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-labelledby="settings-title">
+        <h1 id="settings-title">Budget Tracker Settings</h1>
+        <p class="intro">Adjust your preferences for your budget tracker.</p>
+
+        <form id="settings-form" novalidate>
+          <div class="field">
+            <label for="currency">Preferred Currency</label>
+            <select id="currency" name="currency">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="KES">KES</option>
+              <option value="GBP">GBP</option>
+            </select>
+            <p class="error-message" id="currency-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="budget-cap">Monthly Budget Cap</label>
+            <input id="budget-cap" name="budgetCap" type="number" min="1" step="0.01" value="0" />
+            <p class="error-message" id="budget-cap-error" aria-live="polite"></p>
+          </div>
+
+          <div class="field checkbox-row">
+            <input id="email-alerts" name="emailAlerts" type="checkbox" />
+            <label for="email-alerts">Email Alerts</label>
+            <p class="error-message" id="email-alerts-error" aria-live="polite"></p>
+          </div>
+
+          <button type="submit">Save Settings</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="src/settings.js"></script>
+  </body>
+</html>
