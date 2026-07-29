@@ -16,3 +16,6 @@
 - Use modular JavaScript and test-driven validation so behavior can be verified with Vitest/JSDOM.
 - Prefer inline validation messages that appear near the relevant field for better user feedback.
 - Save valid form data to localStorage only after all checks pass.
+
+## An AI Mistake
+- AI can hallucinate and give information that you didn't ask for. For example, it may suggest a feature that is not part of the project requirements or provide code that doesn't match the intended functionality. Always verify AI-generated suggestions against your project specifications and requirements.
