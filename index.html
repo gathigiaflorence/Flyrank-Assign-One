@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Budget Tracker</p>
+          <h1>Take control of your money</h1>
+          <p class="hero-copy">Set your monthly budget, track where your money goes, and see how much you have left.</p>
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <article class="card summary-card">
+          <h2>Your budget summary</h2>
+          <div class="summary-grid">
+            <div>
+              <p class="label">Monthly budget</p>
+              <p id="budget-value" class="value">$0.00</p>
+            </div>
+            <div>
+              <p class="label">Spent</p>
+              <p id="spent-value" class="value">$0.00</p>
+            </div>
+            <div>
+              <p class="label">Remaining</p>
+              <p id="remaining-value" class="value">$0.00</p>
+            </div>
+          </div>
+          <p id="budget-status" class="status-text">You are on track.</p>
+        </article>
+
+        <article class="card form-card">
+          <h2>Settings</h2>
+          <form id="settings-form" novalidate>
+            <label for="owner-name">Your name</label>
+            <input id="owner-name" name="ownerName" type="text" placeholder="Alex" />
+            <p class="error-text" id="owner-name-error"></p>
+
+            <label for="monthly-budget">Monthly budget</label>
+            <input id="monthly-budget" name="budget" type="number" min="1" step="0.01" placeholder="2500" />
+            <p class="error-text" id="budget-error"></p>
+
+            <label for="currency">Currency</label>
+            <select id="currency" name="currency">
+              <option value="">Select currency</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+            </select>
+            <p class="error-text" id="currency-error"></p>
+
+            <button type="submit">Save settings</button>
+            <p id="settings-message" class="status-text" aria-live="polite"></p>
+          </form>
+        </article>
+      </section>
+
+      <section class="dashboard lower-section">
+        <article class="card transaction-card">
+          <h2>Add a transaction</h2>
+          <form id="transaction-form">
+            <label for="description">Description</label>
+            <input id="description" name="description" type="text" placeholder="Groceries" required />
+
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" type="number" min="0" step="0.01" placeholder="50" required />
+
+            <label for="type">Type</label>
+            <select id="type" name="type">
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+
+            <button type="submit">Add transaction</button>
+            <p id="transaction-message" class="status-text" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="card list-card">
+          <h2>Recent activity</h2>
+          <ul id="transactions-list" class="transaction-list"></ul>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
