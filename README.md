@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# Flyrank-Assign-One
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This repository contains the budget and expense tracker app built for the assignment.
 
-Currently, two official plugins are available:
+## Features
+- Dashboard overview with financial summary cards
+- Transactions tracking page
+- Budget planning page
+- Reports page
+- Settings page
+- Health check page that fetches data
+- Responsive layout for desktop and mobile screens
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting started
 
-## React Compiler
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the app locally:
+   ```bash
+   npm run dev
+   ```
+3. Build for production:
+   ```bash
+   npm run build
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Environment variables
+Create a `.env` file from `.env.example` and set values like:
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+VITE_APP_NAME=BudgetFlow
+VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Deployment
+This project is configured for Vercel deployment with a `vercel.json` file and a Vite build output.
+
