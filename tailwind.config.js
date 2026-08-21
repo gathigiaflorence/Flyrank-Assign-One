@@ -4,6 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        border: 'var(--border)',
+        ring: 'var(--ring)',
         brand: {
           50: '#eef6ff',
           100: '#d9ebff',
@@ -20,6 +24,9 @@ export default {
       },
       boxShadow: {
         soft: '0 10px 30px rgba(15, 23, 42, 0.08)'
+      },
+      outlineColor: {
+        ring: 'var(--ring)'
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
